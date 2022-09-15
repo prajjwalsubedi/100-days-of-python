@@ -17,37 +17,42 @@ logo = """
 from replit import clear
 
 print(logo)
+
+
 def calculate(x, y, z):
-  if y == "+":
-    calc = x + z
-  elif y == "-":
-    calc = x - z
-  elif y == "/":
-    calc = x / z
-  elif y == "*":
-    calc = x * z
-  else:
-    print("Please choose proper operator!!!")
-  return calc
+    if y == "+":
+        calc = x + z
+    elif y == "-":
+        calc = x - z
+    elif y == "/":
+        calc = x / z
+    elif y == "*":
+        calc = x * z
+    else:
+        print("Please choose proper operator!!!")
+    return calc
+
 
 calc = 0
 a = "yes"
 b = "no"
 while a == "yes" or a == "y":
-  if b == "yes" or b == "y":
-    x = calc
-  else:
-    x = float(input("Enter your first number:  "))
-  y = input("choose the operater; + or - or * or / :  ")
-  z = float(input("Enter your Second number:  "))
-  calc = calculate(x, y, z)
-  print(f"{x} {y} {z} = {calc}")
+    if b == "yes" or b == "y":
+        x = calc
+    else:
+        x = float(input("Enter your first number:  "))
+    y = input("choose the operater; + or - or * or / :  ")
+    z = float(input("Enter your Second number:  "))
+    calc = calculate(x, y, z)
+    print(f"{x} {y} {z} = {calc}")
 
-  b = input(f'Type \"Y\" to continue calculating with {calc}, or \"N\" to restart again :    ')
-  
-  if b == "yes" or b == "y":
-    a = "yes"
-  else:
-    clear()
-    a = "yes"
-    print(logo)
+    b = input(
+        f'Type \"Y\" to continue calculating with {calc}, or \"N\" to restart again :    '
+    ).lower()
+
+    if b == "yes" or b == "y":
+        a = "yes"
+    else:
+        clear()
+        a = "yes"
+        print(logo)
