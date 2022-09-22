@@ -11,7 +11,7 @@ from replit import clear
 
 
 #life function
-def life(level):
+def life_set(level):
     if level == "easy":
         life = 10
     elif level == "hard":
@@ -47,7 +47,7 @@ while play == "y":
   I'm thinking of a number between 1 and 100.
   """)
     level = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
-    life = life(level)
+    life = life_set(level)
     guess = 0
     while life != 0 or number != guess:
         if life == 0:

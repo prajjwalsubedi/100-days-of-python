@@ -1,1 +1,1 @@
- run = "python3 day12_guess_the_number.py"
+ run = "python3 day14_higher_lower.py"
