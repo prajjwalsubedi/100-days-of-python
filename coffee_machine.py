@@ -32,7 +32,6 @@ resources = {
     "coffee": 100,
 }
 
-
 def check_resource(order_ingredients):
     for item in order_ingredients:
         if resources[item] < order_ingredients[item]:
@@ -40,13 +39,11 @@ def check_resource(order_ingredients):
             return False
     return True
 
-
 def subtract_resources(order_ingredients, return_money):
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
     print(f"Here is your {request} ☕️. Enjoy!")
     print(f"Your return is: ${return_money}.")
-
 
 def entry(request, status):
     if request == "report":
@@ -63,7 +60,6 @@ def entry(request, status):
     else:
         return request
 
-
 def money():
     quarters = int(input("how many quarters?: "))
     dimes = int(input("how many dimes?: "))
@@ -71,15 +67,15 @@ def money():
     penny = int(input("how many penny?: "))
     total_money = (quarters * 25 + dimes * 10 + nickles * 5 + penny) / 100
     total_cost = MENU[request]["cost"]
-    
-    return total_money - total_cost
 
+    return total_money - total_cost
 
 status = "on"
 income = 0
 # TODO: 3. game
 while status == "on":
-    request = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    request = input(
+        "What would you like? (espresso/latte/cappuccino): ").lower()
     entry(request, status)
     if request == "off":
         break
@@ -94,5 +90,3 @@ while status == "on":
             else:
                 subtract_resources(order_ingredients, return_money)
                 income += MENU[request]["cost"]
-
-
